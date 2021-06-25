@@ -3,9 +3,9 @@ package quarter.one.level.one.lesson.two;
 import java.util.Random;
 
 public class Main {
-    static Random random = new Random();
-
     public static void main(String[] args) {
+        Random random = new Random();
+
         boolean result = checkSum(random.nextInt(20), random.nextInt(20));
         System.out.println(result);
 
@@ -15,6 +15,9 @@ public class Main {
         System.out.println(value);
 
         printText("Hello World!", random.nextInt(8) + 3);
+
+        boolean isLeapYear = isLeapYear(random.nextInt(2001) + 1000);
+        System.out.println(isLeapYear);
     }
 
     /**
@@ -55,5 +58,14 @@ public class Main {
         for (int i = 0; i < count; i++) {
             System.out.println(text);
         }
+    }
+
+    /**
+     * 5. (*) Написать метод, который определяет, является ли год високосным,
+     * и возвращает boolean (високосный - true, не високосный - false).
+     * Каждый 4-й год является високосным, кроме каждого 100-го, при этом каждый 400-й – високосный.
+     */
+    public static boolean isLeapYear(int year) {
+        return (year % 4 == 0 && year % 100 != 0) || (year % 400 == 0);
     }
 }
