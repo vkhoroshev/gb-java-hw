@@ -13,6 +13,8 @@ public class Main {
 
         boolean value = isNegativeNumber(random.nextInt(21) - 10);
         System.out.println(value);
+
+        printText("Hello World!", random.nextInt(8) + 3);
     }
 
     /**
@@ -43,5 +45,15 @@ public class Main {
      */
     public static boolean isNegativeNumber(int n) {
         return n < 0;
+    }
+
+    /**
+     * 4. Написать метод, которому в качестве аргументов передается строка и число,
+     * метод должен отпечатать в консоль указанную строку, указанное количество раз.
+     */
+    public static void printText(String text, int count) {
+        for (int i = 0; i < count; i++) {
+            System.out.println(text);
+        }
     }
 }
