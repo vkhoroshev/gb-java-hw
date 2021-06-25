@@ -10,6 +10,9 @@ public class Main {
         System.out.println(result);
 
         printNumberSign(random.nextInt(21) - 10);
+
+        boolean value = isNegativeNumber(random.nextInt(21) - 10);
+        System.out.println(value);
     }
 
     /**
@@ -32,5 +35,13 @@ public class Main {
         } else {
             System.out.println("Отрицательное число");
         }
+    }
+
+    /**
+     * 3. Написать метод, которому в качестве параметра передается целое число.
+     * Метод должен вернуть true, если число отрицательное, и вернуть false если положительное.
+     */
+    public static boolean isNegativeNumber(int n) {
+        return n < 0;
     }
 }
