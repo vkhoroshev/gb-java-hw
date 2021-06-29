@@ -1,8 +1,11 @@
 package quarter.one.level.one.lesson.three;
 
 import java.util.Arrays;
+import java.util.Random;
 
 public class Main {
+    public static Random random = new Random();
+
     public static void main(String[] args) {
         taskOne();
         System.out.println();
@@ -18,6 +21,24 @@ public class Main {
 
         int[] array = getArray(10, 8);
         System.out.println(Arrays.toString(array));
+        System.out.println();
+
+        taskSix();
+        System.out.println();
+    }
+
+    /**
+     * Формирует массив случайных целых чисел.
+     */
+    public static int[] getRandomIntArray(int size, int range, boolean notNegative) {
+        int[] array = new int[size];
+        for (int i = 0; i < array.length; i++) {
+            array[i] = random.nextInt(range * 2 + 1) - range;
+            if (notNegative) {
+                array[i] = Math.abs(array[i]);
+            }
+        }
+        return array;
     }
 
     /**
@@ -26,7 +47,7 @@ public class Main {
      * С помощью цикла и условия заменить 0 на 1, 1 на 0.
      */
     public static void taskOne() {
-        int[] array = {1, 1, 0, 0, 1, 0, 1, 1, 0, 0};
+        int[] array = getRandomIntArray(10, 1, true);
         System.out.println(Arrays.toString(array));
 
         for (int i = 0; i < array.length; i++) {
@@ -91,5 +112,26 @@ public class Main {
         int[] array = new int[len];
         Arrays.fill(array, initialValue);
         return array;
+    }
+
+    /**
+     * 6. (*) Задать одномерный массив и найти в нем минимальный и максимальный элементы.
+     */
+    public static void taskSix() {
+        int[] array = getRandomIntArray(10, 50, false);
+        int min = array[0];
+        int max = array[0];
+
+        for (int i : array) {
+            if (i < min) {
+                min = i;
+            } else if (i > max) {
+                max = i;
+            }
+        }
+
+        System.out.println(Arrays.toString(array));
+        System.out.println("min: " + min);
+        System.out.println("max: " + max);
     }
 }
