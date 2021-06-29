@@ -19,11 +19,16 @@ public class Main {
         taskFour(9);
         System.out.println();
 
-        int[] array = getArray(10, 8);
-        System.out.println(Arrays.toString(array));
+        int[] array1 = getArray(10, 8);
+        System.out.println(Arrays.toString(array1));
         System.out.println();
 
         taskSix();
+        System.out.println();
+
+        int[] array2 = getRandomIntArray(8, 3, true);
+        System.out.println(Arrays.toString(array2));
+        System.out.println(checkBalance(array2));
         System.out.println();
     }
 
@@ -133,5 +138,42 @@ public class Main {
         System.out.println(Arrays.toString(array));
         System.out.println("min: " + min);
         System.out.println("max: " + max);
+    }
+
+    /**
+     * 7. (**) Написать метод, в который передается не пустой одномерный целочисленный массив,
+     * метод должен вернуть true, если в массиве есть место, в котором сумма левой и правой части массива равны.
+     *
+     * Примеры:
+     *  checkBalance([2, 2, 2, 1, 2, 2, ||| 10, 1]) → true, т.е. 2 + 2 + 2 + 1 + 2 + 2 = 10 + 1
+     *  checkBalance([1, 1, 1, ||| 2, 1]) → true, т.е. 1 + 1 + 1 = 2 + 1
+     *  checkBalance([1, 14, 1, ||| 2, 1, 6, 7]) → true, т.е. 1 + 14 + 1 = 2 + 1 + 6 + 7
+     */
+    public static boolean checkBalance(int[] array) {
+        // Изначально считаем, что результат ложный.
+        boolean result = false;
+
+        // Находим сумму элементов массива.
+        int sum = 0;
+        for (int i : array){
+            sum += i;
+        }
+
+        // Если середина не целое число, то делаем возврат.
+        if (sum % 2 != 0) {
+            return result;
+        }
+        int middle = sum / 2;
+
+        // Начинаем считать сумму элементов слева.
+        int sumLeft = 0;
+        for (int i : array) {
+            sumLeft += i;
+            if (sumLeft >= middle) {
+                result = (sumLeft == middle);
+                break;
+            }
+        }
+        return result;
     }
 }
