@@ -15,7 +15,7 @@ public class Animal {
 
     public void run(int distance) {
         if (maxRunDistance == 0) {
-            System.out.printf("%s '%s' - не умеет бегать.", type, name);
+            System.out.printf("%s '%s' - не умеет бегать.\n", type, name);
             return;
         }
         if (distance < 0) {
@@ -30,15 +30,15 @@ public class Animal {
     }
 
     public void swim(int distance) {
-        if (maxRunDistance == 0) {
-            System.out.printf("%s '%s' - не умеет плавать.", type, name);
+        if (maxSwimDistance == 0) {
+            System.out.printf("%s '%s' - не умеет плавать.\n", type, name);
             return;
         }
         if (distance < 0) {
             System.out.println("Для плавания необходимо ввести неотрицательное число!");
             return;
         }
-        if (distance <= maxRunDistance) {
+        if (distance <= maxSwimDistance) {
             System.out.printf("%s '%s' проплыл(а) %d метров.\n", type, name, distance);
         } else {
             System.out.printf("%s '%s' не сможет проплыть %d метров.\n", type, name, distance);
