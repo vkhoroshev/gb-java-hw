@@ -5,12 +5,14 @@ public class Animal {
     String type;
     int maxRunDistance;
     int maxSwimDistance;
+    private static int count;
 
     public Animal(String name, String type, int maxRunDistance, int maxSwimDistance) {
         this.name = name;
         this.type = type;
         this.maxRunDistance = maxRunDistance;
         this.maxSwimDistance = maxSwimDistance;
+        count++;
     }
 
     public void run(int distance) {
@@ -43,5 +45,9 @@ public class Animal {
         } else {
             System.out.printf("%s '%s' не сможет проплыть %d метров.\n", type, name, distance);
         }
+    }
+
+    public static int getCount() {
+        return count;
     }
 }
