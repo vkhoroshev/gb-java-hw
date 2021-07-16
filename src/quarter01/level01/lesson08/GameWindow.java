@@ -1,4 +1,4 @@
-package quarter.one.level.one.lesson.eight;
+package quarter01.level01.lesson08;
 
 import javax.swing.*;
 import java.awt.*;

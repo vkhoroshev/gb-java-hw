@@ -1,6 +1,6 @@
-package quarter.one.level.one.lesson.one;
+package quarter01.level01.lesson01;
 
-public class HomeWorkApp {
+public class Main {
     public static void main(String[] args) {
         printThreeWords();
         checkSumSign();

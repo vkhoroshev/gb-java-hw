@@ -1,4 +1,4 @@
-package quarter.one.level.one.lesson.five;
+package quarter01.level01.lesson05;
 
 public class Main {
     public static void main(String[] args) {

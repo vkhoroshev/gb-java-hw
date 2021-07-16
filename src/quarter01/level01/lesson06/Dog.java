@@ -1,4 +1,4 @@
-package quarter.one.level.one.lesson.six;
+package quarter01.level01.lesson06;
 
 public class Dog extends Animal {
     private static int count;

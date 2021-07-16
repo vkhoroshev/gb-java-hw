@@ -1,4 +1,4 @@
-package quarter.one.level.one.lesson.seven;
+package quarter01.level01.lesson07;
 
 public class Cat {
     private String name;
