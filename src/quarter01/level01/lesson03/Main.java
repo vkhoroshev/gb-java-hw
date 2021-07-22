@@ -155,7 +155,7 @@ public class Main {
 
         // Находим сумму элементов массива.
         int sum = 0;
-        for (int i : array){
+        for (int i : array) {
             sum += i;
         }
 
