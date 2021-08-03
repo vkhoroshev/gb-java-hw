@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.net.URL?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+            fx:controller="quarter01.level02.lesson04.Controller">
+
+    <stylesheets>
+        <URL value="@style.css"/>
+    </stylesheets>
+    <center>
+        <TextArea fx:id="textArea" editable="false"/>
+    </center>
+    <bottom>
+        <HBox>
+            <TextField fx:id="textField" onAction="#sendMessage" prefWidth="500"/>
+            <Button text="Send" onAction="#sendMessage" prefWidth="100"/>
+        </HBox>
+    </bottom>
+</BorderPane>
