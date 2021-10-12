@@ -1,5 +1,8 @@
 package quarter01.level03.lesson01;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+
 public class Main {
     public static void main(String[] args) {
         FruitBox<Apple> box1 = new FruitBox<>();
@@ -12,5 +15,12 @@ public class Main {
                 new Orange(1.5f));
 
         System.out.println(box1.compare(box2));
+
+        String[] array = {"Один", "Два", "Три"};
+        System.out.println(arrayToArrayList(array));
+    }
+
+    public static <T> ArrayList<T> arrayToArrayList(T[] array) {
+        return new ArrayList<>(Arrays.asList(array));
     }
 }
