@@ -18,9 +18,18 @@ public class Main {
 
         String[] array = {"Один", "Два", "Три"};
         System.out.println(arrayToArrayList(array));
+
+        swap(array, 0, 2);
+        System.out.println(Arrays.toString(array));
     }
 
     public static <T> ArrayList<T> arrayToArrayList(T[] array) {
         return new ArrayList<>(Arrays.asList(array));
+    }
+
+    public static <T> void swap(T[] array, int index1, int index2) {
+        T object = array[index1];
+        array[index1] = array[index2];
+        array[index2] = object;
     }
 }
