@@ -50,13 +50,23 @@ public class ClientHandler {
                     while (authenticated) {
                         String str = in.readUTF();
 
-                        if (str.equals("/end")) {
-                            sendMsg("/end");
-                            System.out.println("Client disconnected");
-                            break;
-                        }
+                        if (str.startsWith("/")) {
+                            if (str.equals("/end")) {
+                                sendMsg("/end");
+                                System.out.println("Client disconnected");
+                                break;
+                            }
 
-                        server.broadcastMsg(this, str);
+                            if (str.startsWith("/w")) {
+                                String[] token = str.split("\\s+", 3);
+                                if (token.length < 3) {
+                                    continue;
+                                }
+                                server.privateMsg(this, token[1], token[2]);
+                            }
+                        } else {
+                            server.broadcastMsg(this, str);
+                        }
                     }
                 } catch (IOException e) {
                     e.printStackTrace();
